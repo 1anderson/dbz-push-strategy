@@ -1,0 +1,32 @@
+{ 
+  "species":[
+    {
+      "id": 2,
+      "name": "SAIYAN",
+      "description": "Uma raça de extraterrestres que desempenham um papel central na série, uma vez que é revelado que o protagonista, Goku , é na verdade um Saiyajin",
+      "createdAt": "2020-04-25T03:11:30.000Z",
+      "updatedAt": "2020-04-25T03:39:17.000Z",
+      "characters": [
+        {
+          "id": 1,
+          "name": "SON GOKU",
+          "gender": "M",
+          "image": "https://vignette.wikia.nocookie.net/dragonball/images/7/78/Goku_%28etapas%29.jpg/revision/latest/top-crop/width/360/height/450?cb=20140526153527&path-prefix=pt-br",
+          "speciesId": 2,
+          "originPlanetId": 3,
+          "originalSerieId": 1,
+          "createdAt": "2020-04-25T03:28:05.000Z",
+          "updatedAt": "2020-04-25T03:49:04.000Z"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Namekian",
+      "description": " Eles são humanóides com características de plantas e lesmas, incluindo pele verde e antenas.",
+      "createdAt": "2020-04-25T02:51:43.000Z",
+      "updatedAt": "2020-04-25T02:51:43.000Z",
+      "characters": []
+    }
+  ] 
+}

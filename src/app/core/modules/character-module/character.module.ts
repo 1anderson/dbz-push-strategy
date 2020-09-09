@@ -5,6 +5,7 @@ import { CharacterComponent } from './components/character/character.component';
 
 
 
+
 @NgModule({
   declarations: [CharacterListComponent, CharacterComponent],
   imports: [
