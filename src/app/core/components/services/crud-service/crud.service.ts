@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CrudService {
-  private readonly apiUrl = 'http://localhost:3000';
+  private readonly apiUrl = 'http://localhost:8080/v1';
   constructor(private http: HttpClient) { }
 
   get<T>(recurso: string): Observable<T> {

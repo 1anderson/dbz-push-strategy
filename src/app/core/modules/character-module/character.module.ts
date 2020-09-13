@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterComponent } from './components/character/character.component';
 import { TableCharacterComponent } from './components/table-character/table-character.component';
+import { SharedModule } from '@shared/shared.module';
 
 
 
@@ -10,7 +11,9 @@ import { TableCharacterComponent } from './components/table-character/table-char
 @NgModule({
   declarations: [CharacterListComponent, CharacterComponent, TableCharacterComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    SharedModule
+  ],
+  exports: [ TableCharacterComponent ]
 })
 export class CharacterModule { }

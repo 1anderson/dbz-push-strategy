@@ -1,21 +1,32 @@
+import { state } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, combineLatest } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 
 import { CrudService } from '../../services/crud-service/crud.service';
+import State from '../models/state';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeFacadeService {
+  private readonly initState: State = { listItems: [] };
   atualDataList$: Observable<any>;
-  changeListAction: BehaviorSubject<string>;
+  state$ = new BehaviorSubject<State>(this.initState);
 
   constructor(private crudServcie: CrudService) {
-    combineLatest([this.atualDataList$, this.changeListAction])
-      .pipe(switchMap( ([dataAtualList, action]: [ any, string ]) => {
-        return this.crudServcie.get<any>(action);
-      } ));
+    this.atualDataList$ = this.state$.pipe(map( (stateData: State) => stateData.listItems)).pipe(distinctUntilChanged());
+  }
+
+  updateList(resourceName: string) {
+    this.crudServcie.get(resourceName)
+      .subscribe( (listItems: Array<any>) => {
+        this.updateState({...state, listItems});
+      });
+  }
+
+  updateState(newState: State) {
+    this.state$.next(newState);
   }
 
 }

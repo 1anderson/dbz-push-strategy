@@ -1,5 +1,14 @@
-<mat-tab-group>
-    <mat-tab label="First"> Content 1 </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
-  </mat-tab-group>
+<mat-tab-group (selectedTabChange)="updateList($event)">
+  <mat-tab label="Personagens">
+    <app-table-character [list]="atualDataList$"></app-table-character>
+  </mat-tab>
+  <mat-tab label="Planetas">
+    <app-table-planet [list]="atualDataList$"></app-table-planet>
+  </mat-tab>
+  <mat-tab label="Series">
+    <app-table-serie [list]="atualDataList$"></app-table-serie>
+  </mat-tab>
+  <mat-tab label="Species">
+    <app-table-specie [list]="atualDataList$"></app-table-specie>
+  </mat-tab>
+</mat-tab-group>

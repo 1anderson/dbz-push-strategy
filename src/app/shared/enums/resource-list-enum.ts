@@ -1,3 +1,6 @@
 export enum ResourceList {
-    character = 'character'
+    characters = 'characters',
+    planets = 'planets',
+    series = 'series',
+    species = 'species'
 }
