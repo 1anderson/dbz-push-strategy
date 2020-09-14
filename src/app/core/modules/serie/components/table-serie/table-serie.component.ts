@@ -10,7 +10,7 @@ import Serie from '../../models/serie';
 })
 export class TableSerieComponent implements OnInit {
 
-  displayedColumns: string[] = [ 'image', 'name', 'description' ];
+  displayedColumns: string[] = [ 'name', 'description' ];
   dataSource = new MatTableDataSource<Serie[]>();
   @Input() list: Observable<Serie[]>;
   constructor() { }

@@ -4,6 +4,7 @@ import { CharacterListComponent } from './components/character-list/character-li
 import { CharacterComponent } from './components/character/character.component';
 import { TableCharacterComponent } from './components/table-character/table-character.component';
 import { SharedModule } from '@shared/shared.module';
+import { CharacterRoutingModule } from './character.routing.module';
 
 
 
@@ -12,7 +13,8 @@ import { SharedModule } from '@shared/shared.module';
   declarations: [CharacterListComponent, CharacterComponent, TableCharacterComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    CharacterRoutingModule
   ],
   exports: [ TableCharacterComponent ]
 })

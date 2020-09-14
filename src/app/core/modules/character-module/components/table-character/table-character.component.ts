@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Character } from '../../models/character';
 
@@ -9,10 +10,14 @@ import { Character } from '../../models/character';
   styleUrls: ['./table-character.component.scss']
 })
 export class TableCharacterComponent implements OnInit {
-  displayedColumns: string[] = [ 'image', 'name', 'gender' ];
+  displayedColumns: string[] = ['name', 'gender' ];
   dataSource = new MatTableDataSource<Character[]>();
-  constructor() { }
+  constructor(private router: Router) { }
   @Input() list: Observable<Character[]>;
   ngOnInit(): void {}
+
+  redirect(id: number) {
+    this.router.navigateByUrl('/character/' + id);
+  }
 
 }
