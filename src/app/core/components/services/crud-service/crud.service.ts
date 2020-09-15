@@ -12,4 +12,8 @@ export class CrudService {
   get<T>(recurso: string): Observable<T> {
     return this.http.get<T>(`${this.apiUrl}/${recurso}`);
   }
+
+  getById<T>(recurso: string, id: number): Observable<T> {
+    return this.http.get<T>(`${this.apiUrl}/${recurso}/${id}`);
+  }
 }

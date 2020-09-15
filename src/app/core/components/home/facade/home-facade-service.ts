@@ -1,7 +1,7 @@
 import { state } from '@angular/animations';
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject, combineLatest } from 'rxjs';
-import { distinctUntilChanged, map, switchMap } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 
 import { CrudService } from '../../services/crud-service/crud.service';
 import State from '../models/state';

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CharaceterFacadeService } from '../../facade/characeter-facade.service';
 
 @Component({
   selector: 'app-character',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private characeterFacadeService: CharaceterFacadeService, private activeRoute: ActivatedRoute) { }
+  character$ = this.characeterFacadeService.character$;
   ngOnInit() {
+    const { id } = this.activeRoute.snapshot.params;
+    this.characeterFacadeService.getCharater(id);
   }
 
 }

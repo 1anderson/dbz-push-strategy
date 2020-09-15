@@ -1,4 +1,20 @@
-<div fxLayout="row">
-    <div fxFlex="50%">conteudo</div>
-    <div fxFlex="50%">imagem</div>
+<div fxLayout="column" fxLayoutAlign="start center" *ngIf="character$ | async as character">
+    <div class="card-size">
+        <mat-card>
+            <mat-card-content fxLayout="column" fxLayoutAlign="start center">
+                <div  fxLayout="column" fxLayoutGap="10px">
+                    <h3>Informações</h3>
+                    <span> Nome: {{character.name}}</span>
+                    <span> Genero: {{character.gender}}</span>
+                    <span> Specie: {{character?.species?.name}}</span>
+                    <span> Planet: {{character?.planet?.name}}</span>
+                    <span> Serie: {{character?.serie?.name}}</span>
+                </div>
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+    <mat-card>
+    <div><img [src]="character.image"> </div>
+    </mat-card>
 </div>
